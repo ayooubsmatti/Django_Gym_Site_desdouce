@@ -1,0 +1,43 @@
+{% extends 'index_base.html'%}
+{% block content%}
+	<!-- Milestones section -->
+	<section class="milestones-section">
+		<div class="container">
+			<div class="row">
+            {% for a in milestones %}
+				<div class="col-lg-3 col-sm-6">
+					<div class="milestone">
+						<h2>{{ a.milestone_numero }}</h2>
+						<p>{{ a.milestone_nombre }}</p>
+					</div>
+                </div>	
+            {% endfor %}
+			</div>
+		</div>
+	</section>
+	<!-- Milestones section end -->
+
+	<!-- Trainers section -->
+	<section class="trainers-section">
+		<div class="container">
+			<div class="section-title text-center">
+				<h2>Meet the <span>Trainers</span></h2>
+			</div>
+			<div class="row">
+                {% for ab in entrenadors %}
+                <div class="col-lg-3 col-sm-6">
+                    <div class="trainer-item">
+                        <div class="trainer-pic">
+                            <img src="{{ ab.entrenador_url_img }}" alt="{{ ab.entrenador_nombre }}">
+                        </div>
+                        <h4>{{ ab.entrenador_nombre }}</h4>
+                        <p>{{ab.entrenador_descripcion}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+			</div>
+		</div>
+	</section>
+{% endblock %}
+	
+	<!-- Trainers section end -->
